@@ -14,26 +14,26 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /*
- * @package    atto_NEWTEMPLATE
+ * @package    atto_superiframe
  * @copyright  COPYRIGHTINFO
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 /**
- * @module moodle-atto_NEWTEMPLATE-button
+ * @module moodle-atto_superiframe-button
  */
 
 /**
- * Atto text editor NEWTEMPLATE plugin.
+ * Atto text editor superiframe plugin.
  *
- * @namespace M.atto_NEWTEMPLATE
+ * @namespace M.atto_superiframe
  * @class button
  * @extends M.editor_atto.EditorPlugin
  */
 
-var COMPONENTNAME = 'atto_NEWTEMPLATE';
-var FLAVORCONTROL = 'NEWTEMPLATE_flavor';
-var LOGNAME = 'atto_NEWTEMPLATE';
+var COMPONENTNAME = 'atto_superiframe';
+var FLAVORCONTROL = 'superiframe_flavor';
+var LOGNAME = 'atto_superiframe';
 
 var CSS = {
         INPUTSUBMIT: 'atto_media_urlentrysubmit',
@@ -54,9 +54,9 @@ var TEMPLATE = '' +
         'icon: {{clickedicon}}'  +
     '</form>';
 
-Y.namespace('M.atto_NEWTEMPLATE').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
+Y.namespace('M.atto_superiframe').Button = Y.Base.create('button', Y.M.editor_atto.EditorPlugin, [], {
 
-  
+
 	/**
      * Initialize the button
      *
@@ -68,13 +68,13 @@ Y.namespace('M.atto_NEWTEMPLATE').Button = Y.Base.create('button', Y.M.editor_at
             return;
         }
 
-        var twoicons = ['iconone', 'icontwo'];
+        var twoicons = ['iconone'];
 
         Y.Array.each(twoicons, function(theicon) {
-            // Add the NEWTEMPLATE icon/buttons
+            // Add the superiframe icon/buttons
             this.addButton({
                 icon: 'ed/' + theicon,
-                iconComponent: 'atto_NEWTEMPLATE',
+                iconComponent: 'atto_superiframe',
                 buttonName: theicon,
                 callback: this._displayDialogue,
                 callbackArgs: theicon
@@ -95,7 +95,7 @@ Y.namespace('M.atto_NEWTEMPLATE').Button = Y.Base.create('button', Y.M.editor_at
     },
 
      /**
-     * Display the NEWTEMPLATE Dialogue
+     * Display the superiframe Dialogue
      *
      * @method _displayDialogue
      * @private
@@ -172,8 +172,10 @@ Y.namespace('M.atto_NEWTEMPLATE').Button = Y.Base.create('button', Y.M.editor_at
             return;
         }
 
+        var superiframehtml = "<img src=\"http://www.randomkittengenerator.com/cats/rotator.php\">";
+
         this.editor.focus();
-        this.get('host').insertContentAtFocusPoint(flavorcontrol.get('value'));
+        this.get('host').insertContentAtFocusPoint(superiframehtml);
         this.markUpdated();
 
     }
